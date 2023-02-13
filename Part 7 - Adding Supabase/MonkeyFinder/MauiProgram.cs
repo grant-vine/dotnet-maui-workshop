@@ -1,5 +1,4 @@
-﻿using Java.Net;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MonkeyFinder.Providers;
 using MonkeyFinder.Services;
 using MonkeyFinder.View;
@@ -24,8 +23,7 @@ public static class MauiProgram
         var url = "https://nqdbztbjvfnswzuceysw.supabase.co";
         var key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xZGJ6dGJqdmZuc3d6dWNleXN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMjUzNjMsImV4cCI6MTk5MTYwMTM2M30.1d4Zwa9OHSLWCDvlBOVevUC4AqTkhZ1IFsnqVzQCdzk";
         
-        //builder.Services.AddSingleton<>();
-        builder.Services.AddSingleton<Supabase.Client>(
+		builder.Services.AddSingleton<Supabase.Client>(
 			provider => new Supabase.Client(
 				url,
 				key,
