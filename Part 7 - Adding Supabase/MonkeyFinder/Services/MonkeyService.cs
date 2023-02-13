@@ -1,27 +1,42 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http;
+using System.Net.Http.Json;
 
 namespace MonkeyFinder.Services;
 
 public class MonkeyService
 {
-    HttpClient httpClient;
-    public MonkeyService()
+    DatabaseService database;
+    //HttpClient httpClient;
+    public MonkeyService(DatabaseService database)
     {
-        this.httpClient = new HttpClient();
+        this.database = database;
+        //this.httpClient = new HttpClient();
     }
 
     List<Monkey> monkeyList;
+
     public async Task<List<Monkey>> GetMonkeys()
     {
         if (monkeyList?.Count > 0)
             return monkeyList;
 
         // Online
-        var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
-        if (response.IsSuccessStatusCode)
+        //var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
+        //if (response.IsSuccessStatusCode)
+        //{
+        //    monkeyList = await response.Content.ReadFromJsonAsync<List<Monkey>>();
+        //}
+
+        var response = await database.From<Monkey>();
+
+        if (response.Count > 0)
         {
-            monkeyList = await response.Content.ReadFromJsonAsync<List<Monkey>>();
+            foreach(var monkey in response)
+            {
+                monkeyList.Add(monkey);
+            }
         }
+
         // Offline
         /*using var stream = await FileSystem.OpenAppPackageFileAsync("monkeydata.json");
         using var reader = new StreamReader(stream);

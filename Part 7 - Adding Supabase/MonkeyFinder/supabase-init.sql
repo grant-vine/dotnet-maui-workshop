@@ -1,4 +1,5 @@
 ﻿CREATE TABLE "monkeys" (
+  "Id" serial primary key,
   "Name" text,
   "Location" text,
   "Details" text,
@@ -8,7 +9,7 @@
   "Longitude" double precision
 );
 
-INSERT INTO "monkeys" VALUES
+INSERT INTO "monkeys" ("Name","Location","Details","Image","Population","Latitude","Longitude") VALUES
 ('Baboon','Africa & Asia','Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae.','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg',10000,-8.783195,34.508523),
 ('Capuchin Monkey','Central & South America','The capuchin monkeys are New World monkeys of the subfamily Cebinae. Prior to 2011, the subfamily contained only a single genus, Cebus.','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg',23000,12.769013,-85.602364),
 ('Blue Monkey','Central and East Africa','The blue monkey or diademed monkey is a species of Old World monkey native to Central and East Africa, ranging from the upper Congo River basin east to the East African Rift and south to northern Angola and Zambia','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/bluemonkey.jpg',12000,1.957709,37.297204),
@@ -22,4 +23,3 @@ INSERT INTO "monkeys" VALUES
 ('Henry','Phoenix','An adorable Monkey who is traveling the world with Heather and live tweets his adventures @MotzMonkeys. His favorite platform is iOS by far and is excited for the new iPhone Xs!','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/henry.jpg',1,33.448377,-112.074037),
 ('Red-shanked douc','Vietnam','The red-shanked douc is a species of Old World monkey, among the most colourful of all primates. The douc is an arboreal and diurnal monkey that eats and sleeps in the trees of the forest.','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg',1300,16.111648,108.262122),
 ('Mooch','Seattle','An adorable Monkey who is traveling the world with Heather and live tweets his adventures @MotzMonkeys. His favorite platform is iOS by far and is excited for the new iPhone 6s!','https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/Mooch.PNG',1,47.608013,-122.335167);
-
