@@ -31,10 +31,7 @@ public class MonkeyService
 
         if (response.Count > 0)
         {
-            foreach(var monkey in response)
-            {
-                monkeyList.Add(monkey);
-            }
+            monkeyList = response.ToList();
         }
 
         // Offline

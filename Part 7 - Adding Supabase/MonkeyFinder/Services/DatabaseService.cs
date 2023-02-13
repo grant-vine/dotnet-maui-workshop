@@ -23,7 +23,7 @@ namespace MonkeyFinder.Services
         {
             Postgrest.Responses.ModeledResponse<TModel> modeledResponse = await client
                 .From<TModel>()
-                .Where(x => x.SoftDeleted == false)
+                //.Where(x => x.SoftDeleted == false)
                 .Get();
             return modeledResponse.Models;
         }
@@ -44,17 +44,17 @@ namespace MonkeyFinder.Services
             return modeledResponse.Models;
         }
 
-        public async Task<List<TModel>> SoftDelete<TModel>(TModel item) where TModel : SupaBaseModel, new()
-        {
-            Postgrest.Responses.ModeledResponse<TModel> modeledResponse = await client.Postgrest
-                .Table<TModel>()
-                .Set(x => x.SoftDeleted, true)
-                .Set(x => x.SoftDeletedAt, DateTime.Now)
-                .Where(x => x.Id == item.Id)
-                // .Filter(x => x.Id, Operator.Equals, item.Id)
-                .Update();
-            return modeledResponse.Models;
-        }
+        //public async Task<List<TModel>> SoftDelete<TModel>(TModel item) where TModel : SupaBaseModel, new()
+        //{
+        //    Postgrest.Responses.ModeledResponse<TModel> modeledResponse = await client.Postgrest
+        //        .Table<TModel>()
+        //        .Set(x => x.SoftDeleted, true)
+        //        .Set(x => x.SoftDeletedAt, DateTime.Now)
+        //        .Where(x => x.Id == item.Id)
+        //        // .Filter(x => x.Id, Operator.Equals, item.Id)
+        //        .Update();
+        //    return modeledResponse.Models;
+        //}
     }
 }
 

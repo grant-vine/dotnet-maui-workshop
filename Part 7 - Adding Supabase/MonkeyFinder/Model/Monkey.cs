@@ -2,6 +2,7 @@
 
 namespace MonkeyFinder.Model;
 
+[Table("monkeys")]
 public class Monkey : SupaBaseModel
 {
     [Column("Name")]

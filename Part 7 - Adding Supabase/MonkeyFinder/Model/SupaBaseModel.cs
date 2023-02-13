@@ -14,11 +14,11 @@ namespace MonkeyFinder.Model
         // This way, the sent row wouldn't be set to false automaticaly by Postgre default value
         // because the field was sent with null value.
         // To fix this, the null fields should not be serialized in the request.
-        [Column("SoftDeleted")]
-        public bool? SoftDeleted { get; set; } = false;
+        //[Column("SoftDeleted")]
+        //public bool? SoftDeleted { get; set; } = false;
 
-        [Column("SoftDeletedAt")]
-        public DateTime? SoftDeletedAt { get; set; }
+        //[Column("SoftDeletedAt")]
+        //public DateTime? SoftDeletedAt { get; set; }
 
     }
 }
