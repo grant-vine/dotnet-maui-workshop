@@ -40,4 +40,14 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="supabase-csharp" />
+	  <None Remove="Providers\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="supabase-csharp" Version="0.8.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Providers\" />
+	</ItemGroup>
 </Project>
